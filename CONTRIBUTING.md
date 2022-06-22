@@ -276,9 +276,9 @@ documentation:
 
 > See the [docs](https://github.com/newrelic/newrelic-quickstarts/blob/main/docs/graphql-schema-docs.md#nr1catalogquickstartdashboard) for more details on `dashboards`
 
-- Each dashboard for a quickstart will need to live in it's own directory underneath `/dashboards` ex: `/quickstart_name/dashboards/dashboard_name/dashboard_name.json`
-- If you need to sanitize your dashboards you can run the command `yarn sanitize-dashboard node-js/express` or `yarn sanitize-dashboard catchpoint` where the argument is quickstart name you wish to sanitize.
-- This [script](https://github.com/newrelic/newrelic-quickstarts/blob/main/utils/sanitize_dashboards.js) needs to be run from the `Utils` directory.
+- Each dashboard for a quickstart will need to live in it's own directory underneath the top level `dashboards/` ex: `dashboards/dashboard_name/dashboard_name.json`
+- If you need to sanitize your dashboards you can run the command `yarn sanitize-dashboard node-js` or `yarn sanitize-dashboard catchpoint` where the argument is the dashboard directory you wish to sanitize under the `dashboards/` top level directory.
+- This [script](https://github.com/newrelic/newrelic-quickstarts/blob/main/utils/sanitize_dashboards.js) needs to be run from the `utils` directory.
 - This script will check and remove code that may cause an issue when submitting a PR.
 - As a best practice you should run this script when creating a new dashboard.
 
@@ -300,7 +300,7 @@ documentation:
 
 - A dashboard's name must be unique. After providing a name in the `dashboard.json` file, you can check if your dashboard's name already exists by running `node check_dashboard_name_uniqueness`.
 - this [script](https://github.com/newrelic/newrelic-quickstarts/blob/main/utils/check_dashboard_name_uniqueness.js) will check and notify you of duplicate dashboard names in the repository.
-- this script needs to run from the `Utils` directory.
+- this script needs to run from the `utils` directory.
 - As a best practice you should run this script when creating a new dashboard.
 
 #### Dashboard screenshots
@@ -309,7 +309,7 @@ documentation:
 
 - Dashboard images are `optional` but highly recommended to preview the visual functionality of a dashboard.
 - File name should be `dashboard_name01`, `dashboard_name02`, etc
-- Dashboards images should be stored in that dashboard's directory with it's JSON file. ex: `/quickstart_name/dashboards/dashboard_name/dashboard_name01.png`.
+- Dashboards images should be stored in that dashboard's directory with it's JSON file. ex: `dashboards/dashboard_name/dashboard_name01.png`.
 - Must be in `.png`, `.jpg`, `.jpeg` or `.svg` format
 - Each image file must be less than `4MB` in size
 - There should be no more than `12` dashboard or images per quickstart
